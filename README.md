@@ -1,2 +1,0 @@
-# PortfolioWWW
-Personal Website
