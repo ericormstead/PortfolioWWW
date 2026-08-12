@@ -1,3 +1,5 @@
+import { ScrollColorTitle } from "./scroll-color-title";
+
 const linkedIn = "https://www.linkedin.com/in/eric-ormstead/";
 
 const Arrow = () => <span aria-hidden="true">{"\u2197"}</span>;
@@ -94,7 +96,7 @@ export default function Home() {
           <a className="tile tileConnect" href={linkedIn} target="_blank" rel="noreferrer">
             <span className="connectChevron">{">"}</span>
             <p>Technical leader first.<br />Deep Stibo expert second.</p>
-            <h2>Let's<br />connect.</h2><span className="tileArrow"><Arrow /></span>
+            <ScrollColorTitle /><span className="tileArrow"><Arrow /></span>
           </a>
         </div>
       </section>
