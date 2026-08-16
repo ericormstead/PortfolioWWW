@@ -1,8 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { type ReactNode, useEffect, useRef } from "react";
 
-export function ScrollColorTitle() {
+type ScrollColorTitleProps = {
+  children: ReactNode;
+  className?: string;
+};
+
+export function ScrollColorTitle({ children, className = "" }: ScrollColorTitleProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -47,5 +52,5 @@ export function ScrollColorTitle() {
     };
   }, []);
 
-  return <h2 ref={titleRef} className="connectTitle">Let's<br />connect.</h2>;
+  return <h2 ref={titleRef} className={`scrollColorTitle ${className}`.trim()}>{children}</h2>;
 }

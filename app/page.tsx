@@ -96,7 +96,7 @@ export default function Home() {
           <a className="tile tileConnect" href={linkedIn} target="_blank" rel="noreferrer">
             <span className="connectChevron">{">"}</span>
             <p>Technical leader first.<br />Deep Stibo expert second.</p>
-            <ScrollColorTitle /><span className="tileArrow"><Arrow /></span>
+            <ScrollColorTitle className="connectTitle">Let's<br />connect.</ScrollColorTitle><span className="tileArrow"><Arrow /></span>
           </a>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function Home() {
         <div className="sectionIndex lightIndex">02 - Leadership signature</div>
         <div className="sectionContent">
           <p className="overline purpleOverline">How leadership should know me</p>
-          <h2>Five signals of<br /><em>trusted leadership.</em></h2>
+          <ScrollColorTitle>Five signals of<br /><em>trusted leadership.</em></ScrollColorTitle>
           <div className="signalGrid">
             {leadershipSignals.map(([number, title, body]) => (
               <article key={number}><span>{number}</span><h3>{title}</h3><p>{body}</p></article>
