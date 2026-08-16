@@ -1,4 +1,5 @@
 import { ScrollColorTitle } from "./scroll-color-title";
+import { ScrollEffects } from "./scroll-effects";
 
 const linkedIn = "https://www.linkedin.com/in/eric-ormstead/";
 
@@ -54,6 +55,7 @@ const focusAreas = [
 export default function Home() {
   return (
     <main>
+      <ScrollEffects />
       <section className="hero" id="top">
         <nav className="nav" aria-label="Primary navigation">
           <a className="wordmark" href="#top"><span>ERIC</span>ORMSTEAD</a>

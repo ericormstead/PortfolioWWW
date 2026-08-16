@@ -17,6 +17,9 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--black); color: var(--ink); font-family: var(--font-geist-sans), Arial, sans-serif; }
 a { color: inherit; text-decoration: none; }
+.scrollProgress { position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 3px; pointer-events: none; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--office-red) 0 36%, var(--purple) 72%, #dba6ff); box-shadow: 0 0 14px rgba(161,0,255,.45); }
+.motionReady .revealTarget { opacity: 0; transform: translate3d(0, 22px, 0); transition: opacity .72s ease var(--reveal-delay, 0ms), transform .72s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms); }
+.motionReady .revealTarget.isVisible { opacity: 1; transform: translate3d(0, 0, 0); }
 .wordmark { color: #fff; font: 700 21px var(--font-geist-mono); letter-spacing: -1.6px; }
 .wordmark span { font-weight: 300; }
 
@@ -31,7 +34,7 @@ a { color: inherit; text-decoration: none; }
 .heroEyebrow, .overline { font: 500 10px var(--font-geist-mono); text-transform: uppercase; letter-spacing: .14em; }
 .heroEyebrow { display: flex; align-items: center; gap: 12px; }
 .heroEyebrow span { width: 8px; height: 8px; margin-right: 14px; background: var(--office-red); border-radius: 50%; box-shadow: 14px 0 0 var(--purple); }
-.hero h1 { margin: auto 0; max-width: 1300px; font-size: clamp(70px, 10.2vw, 158px); line-height: .82; letter-spacing: -.078em; font-weight: 720; text-transform: uppercase; }
+.hero h1 { margin: auto 0; max-width: 1300px; font-size: clamp(70px, 10.2vw, 158px); line-height: .82; letter-spacing: -.078em; font-weight: 720; text-transform: uppercase; will-change: transform; }
 .hero h1 em, .section h2 em, footer h2 em { font-family: Georgia, serif; font-weight: 400; text-transform: none; color: var(--purple); }
 .heroFoot { display: flex; justify-content: flex-end; align-items: flex-end; gap: 8vw; }
 .heroFoot > p { width: min(490px, 44vw); margin: 0; color: #ddd5e1; font-size: 16px; line-height: 1.6; }
@@ -196,4 +199,7 @@ footer h2 em { color: #fff; }
   html { scroll-behavior: auto; }
   .tileImage, .navContact, .heroFoot > a, .credentialGrid article { transition: none; }
   .scrollColorTitle { animation: none; color: #fff; text-shadow: none; }
+  .motionReady .revealTarget, .motionReady .revealTarget.isVisible { opacity: 1; transform: none; transition: none; }
+  .hero h1 { transform: none !important; }
+  .scrollProgress { box-shadow: none; }
 }
